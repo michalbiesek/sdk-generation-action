@@ -57,8 +57,10 @@ func Run(sourcesOnly bool, installationURLs map[string]string, repoURL string, r
 		args = append(args, "--registry-tags", tagString)
 	}
 
-	if environment.SetVersion() != "" {
-		args = append(args, "--set-version", environment.SetVersion())
+	if environment.SkipVersioning() {
+		args = append(args, "--skip-versioning")
+	} else if version := environment.SetVersion(); version != "" {
+		args = append(args, "--set-version", version)
 	}
 
 	// If we are in PR mode we skip testing on generation, this should run as a PR check

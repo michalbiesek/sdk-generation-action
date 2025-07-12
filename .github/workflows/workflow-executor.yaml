@@ -91,6 +91,11 @@ on:
         default: false
         required: false
         type: boolean
+      skip_versioning:
+        description: "Set to true to explicitly skip automatic SDK version increments"
+        default: false
+        required: false
+        type: boolean
       poetry_version:
         description: "Version of poetry to install. Not recommended for use without consulting Speakeasy support."
         required: false

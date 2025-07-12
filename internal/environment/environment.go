@@ -104,6 +104,10 @@ func SkipTesting() bool {
 	return os.Getenv("INPUT_SKIP_TESTING") == "true"
 }
 
+func SkipVersioning() bool {
+	return os.Getenv("INPUT_SKIP_VERSIONING") == "true"
+}
+
 func SpecifiedTarget() string {
 	return os.Getenv("INPUT_TARGET")
 }
